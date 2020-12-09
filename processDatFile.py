@@ -64,16 +64,3 @@ class ProcessDatFile:
             seismicData += str(datetime.datetime.timestamp(date)) + ": %.60f" % value + "\n"
             date = date + datetime.timedelta(milliseconds=(1000/sampleRate))
         ProcessDatFile.recordData(initialDate, seismicData, canal)
-        ProcessDatFile.FourierTransform(aSeismicData, sampleRate, initialDate, canal)
-    
-    @staticmethod
-    def FourierTransform(seismicData, sampleRate, datetime, canal):
-        fourierData = str(sampleRate) + "\n"
-        nsamp = len(seismicData)
-        nyquist = int(np.ceil(nsamp/2))
-        mags = abs(fft(seismicData))
-        step = sampleRate/(2*nsamp)
-        for i in range(1, nyquist):
-            fourierData += "%.60f\n" % mags[i]
-            step += step
-        ProcessDatFile.recordFourierData(datetime, fourierData, canal)

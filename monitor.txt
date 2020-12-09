@@ -27,3 +27,17 @@
 [30/11/2020 13:52:13] Action: Channel 1 | dat file treatment concluded
 [30/11/2020 13:52:30] Action: Channel 3 | dat file treatment concluded
 [30/11/2020 13:52:46] Action: Channel 2 | dat file treatment concluded
+[03/12/2020 10:23:42] Action: start recquisition monitor
+[03/12/2020 10:24:38] Action: start recquisition monitor
+[03/12/2020 10:25:13] Action: start recquisition monitor
+[03/12/2020 10:28:34] Action: start recquisition monitor
+[03/12/2020 10:29:55] Action: start recquisition monitor
+[03/12/2020 10:31:01] Action: start recquisition monitor
+[03/12/2020 10:33:30] Action: start recquisition monitor
+[03/12/2020 10:35:38] Action: start recquisition monitor
+[03/12/2020 10:37:46] Action: start recquisition monitor
+[03/12/2020 10:39:09] Action: start recquisition monitor
+[03/12/2020 10:56:15] Action: start recquisition monitor
+[03/12/2020 10:56:35] Action: start recquisition monitor
+[09/12/2020 08:36:15] Action: start recquisition monitor
+[09/12/2020 08:56:19] Action: start recquisition monitor
