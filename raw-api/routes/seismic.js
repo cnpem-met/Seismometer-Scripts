@@ -30,7 +30,7 @@ function whichFilesINeed(canal, initialDateTime, endDateTime) {
 }
 
 function readFilesINeed(path, initialDateTime, endDateTime){
-    defaultPath = "C:/Users/leona/Desktop/SeismicData/"
+    defaultPath = "/home/reftek/bin/archive/SeismicData/"
     seismicData = [];
     timeData = [];
 

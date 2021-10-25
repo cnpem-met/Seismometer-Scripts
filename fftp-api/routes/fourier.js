@@ -4,9 +4,9 @@ const fs = require("fs");
 
 function fourierTransform(channel, initialDateTime, endDateTime){
     var fourierTransform = [];
-    var defaultPath = "C:/Users/leona/Desktop/FourierRec/";
+    var defaultPath = "/home/reftek/bin/archive/FourierRec/";
     var data = channel + ";" + initialDateTime + ";" + endDateTime;
-    data = fs.writeFileSync((defaultPath + "recquisition.txt"), data);
+    data = fs.writeFileSync((defaultPath + "request.txt"), data);
     outputFile = defaultPath + channel + ";" + initialDateTime + ";" + endDateTime + "-complete.txt";
     while(!fs.existsSync(outputFile)); // Wait the file be create;
     data = fs.readFileSync(outputFile, "utf8");
