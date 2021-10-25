@@ -23,7 +23,7 @@ class FourierRecMonitor(threading.Thread):
         super(FourierRecMonitor, self).__init__()
         self.kill = threading.Event()
         # self.path_in = "/home/reftek/bin/archive/"
-        self.path_in = "C:/Users/leona/Desktop/FourierRec/recquisition.txt"
+        self.path_in = "/home/reftek/bin/archive/FourierRec/recquisition.txt"
         
     def getDateTime(self):
         now = datetime.now()
@@ -35,7 +35,7 @@ class FourierRecMonitor(threading.Thread):
         monitor.close()        
         
     def recordFourierData(self, iniTime, endTime, seismicData, canal):
-        path = ("C:/Users/leona/Desktop/FourierRec/%s;%s;%s" % (canal, iniTime, endTime))
+        path = ("/home/reftek/bin/archive/FourierRec/%s;%s;%s" % (canal, iniTime, endTime))
         os.makedirs(os.path.dirname(path), exist_ok=True)
         print("FOI")
         with open(path+".txt", "a") as file:
@@ -44,14 +44,12 @@ class FourierRecMonitor(threading.Thread):
         file.close()
         
     def fourierTransform(self, iniTime, endTime, seismicData, sampleRate, canal):
-        print("FOI")
         fourierData = str(sampleRate) + "\n"
         nsamp = len(seismicData)
         nyquist = int(np.ceil(nsamp/2))
         mags = abs(fft(seismicData))
         for i in range(1, nyquist):
-            fourierData += "%.15f\n" % mags[i]
-        print("FOI")
+            fourierData += "%.10f\n" % mags[i]
         self.recordFourierData(iniTime, endTime, fourierData, canal)
         
     def run(self):

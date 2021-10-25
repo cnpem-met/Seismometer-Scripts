@@ -27,7 +27,7 @@ class ProcessDatFile:
     # Record the actions in monitor.txt
     @staticmethod
     def recordData(datetime, seismicData, canal):
-        path = ("C:/Users/leona/Desktop/SeismicData/%s/%s/"+ canal + "/%s") % ProcessDatFile.howToRecord(datetime)
+        path = ("/home/reftek/bin/archive/SeismicData/%s/%s/"+ canal + "/%s") % ProcessDatFile.howToRecord(datetime)
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "a") as file:
             file.write(seismicData)
@@ -35,7 +35,7 @@ class ProcessDatFile:
         
     @staticmethod
     def recordFourierData(datetime, seismicData, canal):
-        path = ("C:/Users/leona/Desktop/FourierData/%s/%s/"+ canal+ "/%s") % ProcessDatFile.howToRecord(datetime)
+        path = ("/home/reftek/bin/archive/FourierData/%s/%s/"+ canal+ "/%s") % ProcessDatFile.howToRecord(datetime)
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "a") as file:
             file.write(seismicData)

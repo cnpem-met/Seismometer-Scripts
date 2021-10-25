@@ -19,10 +19,8 @@ class RawFileMonitor(threading.Thread):
     def __init__(self):
         super(RawFileMonitor, self).__init__()
         self.kill = threading.Event()
-        # self.path_in = "/home/reftek/bin/archive/"
-        # self.path_out = "/home/reftek/apps/Seismometer-Scripts/"
-        self.path_in = "C:/Users/leona/Desktop/archive"
-        self.path_cvt = self.path_in + "/RT_ASC"
+        self.path_in = "/home/reftek/bin/archive"
+        self.path_cvt = self.path_in + "/pas2asc"
         self.datFileMonitor = DatFileMonitor()
         
     def getDateTime(self):

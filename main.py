@@ -22,7 +22,7 @@ if start == True:
     fftMonitor.start()
     while start == True:
         time.sleep(60)
-        file = open("start.txt", "r");
+        file = open("start.txt", "r")
         start = bool(int(file.read()))
         file.close()
 
