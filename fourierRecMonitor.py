@@ -22,8 +22,6 @@ class FourierRecMonitor(threading.Thread):
     def __init__(self):
         super(FourierRecMonitor, self).__init__()
         self.kill = threading.Event()
-        # self.path_in = "/home/reftek/bin/archive/"
-        self.path_in = "/home/reftek/bin/archive/FourierRec/recquisition.txt"
         
     def getDateTime(self):
         now = datetime.now()
