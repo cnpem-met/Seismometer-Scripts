@@ -10,7 +10,7 @@ from rawFileMonitor import RawFileMonitor
 from fourierRecMonitor import FourierRecMonitor
 
 # Start the software
-file = open("start.txt", "r");
+file = open("start.txt", "r")
 start = bool(file.read())
 file.close()
 

@@ -13,7 +13,7 @@ class DatFileMonitor():
     
     def __init__(self):
         super(DatFileMonitor, self).__init__()
-        self.path_in = "/home/reftek/bin/archive"
+        self.path_in = "/home/reftek/Seismometer-Scripts/"
         
     def getDateTime(self):
         now = datetime.now()
