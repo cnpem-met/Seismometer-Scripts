@@ -56,9 +56,9 @@ class ProcessDatFile:
         sampleRate = float(ProcessDatFile.getValue(data[3]))
         initialDate = ProcessDatFile.processDate(data[4])
         date = ProcessDatFile.processDate(data[4])
-        bitWeight = float(ProcessDatFile.getValue(data[5]))
+        bitWeight = float(ProcessDatFile.getValue(data[6]))
         # Seismic Data
-        for counts in data[9:(len(data)-1)]:
+        for counts in data[10:(len(data)-1)]:
             value = ProcessDatFile.convertCounts(float(counts), bitWeight)
             aSeismicData.append(value)
             seismicData += str(datetime.datetime.timestamp(date)) + ": %.60f" % value + "\n"
