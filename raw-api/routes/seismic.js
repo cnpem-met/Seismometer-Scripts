@@ -47,7 +47,7 @@ function readFilesINeed(path, initialDateTime, endDateTime){
         for(var j = 0; j < data.length; j++){
             acq = data[j].split(": ");
             if(parseFloat(acq[0]) >= parseFloat(initialDateTime) && parseFloat(acq[0]) <= parseFloat(endDateTime)){
-                seismicData.push(parseFloat(acq[1]));
+                seismicData.push(parseFloat(acq[1]).round(10));
             } else
                 break;
         }
