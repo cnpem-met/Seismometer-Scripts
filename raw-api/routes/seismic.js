@@ -32,7 +32,13 @@ function whichFilesINeed(canal, initialDateTime, endDateTime) {
 function readFilesINeed(path, initialDateTime, endDateTime){
     defaultPath = "/home/reftek/bin/archive/SeismicData/"
     seismicData = [];
-    timeData = [];
+
+    initialDateTime = new Date(parseFloat(initialDateTime) * 1000);
+    endDateTime = new Date(parseFloat(endDateTime) * 1000);
+    timeData = [
+        initialDateTime.getTime()/1000,
+        endDateTime.getTime()/1000
+    ];
 
     for(var i = 0; i < path.length; i++){
         prop = path[i];
@@ -41,7 +47,6 @@ function readFilesINeed(path, initialDateTime, endDateTime){
         for(var j = 0; j < data.length; j++){
             acq = data[j].split(": ");
             if(parseFloat(acq[0]) >= parseFloat(initialDateTime) && parseFloat(acq[0]) <= parseFloat(endDateTime)){
-                timeData.push(parseFloat(acq[0]));
                 seismicData.push(parseFloat(acq[1]));
             } else
                 break;
