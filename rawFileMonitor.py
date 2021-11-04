@@ -9,7 +9,6 @@ import os
 import time
 import threading
 from datetime import datetime
-from datFileMonitor import DatFileMonitor
 
 # Restricoes para identificacao de um novo arquivo
 # 1. xxxxxxx_00000000: Arquivo em processamento
@@ -21,7 +20,6 @@ class RawFileMonitor(threading.Thread):
         self.kill = threading.Event()
         self.path_in = "/home/reftek/bin/archive"
         self.path_cvt = self.path_in + "/pas2asc"
-        self.datFileMonitor = DatFileMonitor()
         
     def getDateTime(self):
         now = datetime.now()
@@ -47,7 +45,6 @@ class RawFileMonitor(threading.Thread):
                 os.system(self.path_cvt + " -Ln " + path_in)
                 os.remove(path_in)
                 self.recordAction("[%s] Action: raw file converted to dat" % self.getDateTime())
-                self.datFileMonitor.run()
         
     def run(self):
         self.recordAction("[%s] Action: start raw file monitor" % self.getDateTime())
