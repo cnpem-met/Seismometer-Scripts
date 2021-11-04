@@ -15,6 +15,7 @@ class ProcessDatFile:
         fileDate = ProcessDatFile.getValue(fileDate)
         year, dayOfYear, hour, minutes, seconds, ms = tuple(fileDate.replace(".", ":").split(":"))
         dt = datetime.date(int(year), 1, 1) + datetime.timedelta(int(dayOfYear) - 1)
+        print(int(ms)*100)
         return datetime.datetime(dt.year, dt.month, dt.day, int(hour), int(minutes), int(seconds), int(ms)*100)
     
     @staticmethod
