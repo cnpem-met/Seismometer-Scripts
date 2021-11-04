@@ -33,11 +33,11 @@ function readFilesINeed(path, initialDateTime, endDateTime){
     defaultPath = "/home/reftek/bin/archive/SeismicData/"
     seismicData = [];
 
-    initialDateTime = new Date(parseFloat(initialDateTime) * 1000);
-    endDateTime = new Date(parseFloat(endDateTime) * 1000);
+    from = new Date(parseFloat(initialDateTime) * 1000);
+    to = new Date(parseFloat(endDateTime) * 1000);
     timeData = [
-        initialDateTime.getTime()/1000,
-        endDateTime.getTime()/1000
+        from.getTime()/1000,
+        to.getTime()/1000
     ];
 
     for(var i = 0; i < path.length; i++){
